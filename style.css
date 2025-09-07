@@ -567,25 +567,331 @@ h2 {
     text-align: center;
 }
 
+/* スマホ対応 */
 @media (max-width: 768px) {
     .container {
+        padding: 5px;
+        max-width: 100%;
+    }
+    
+    header h1 {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+    
+    nav {
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+    
+    .tab-btn {
+        padding: 8px 12px;
+        font-size: 12px;
+        border-radius: 15px;
+        min-width: 60px;
+    }
+    
+    main {
+        padding: 15px;
+    }
+    
+    h2 {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+    
+    /* 週間献立表示を縦スクロールに */
+    .weekly-grid {
+        display: block;
+        overflow-x: visible;
+    }
+    
+    .day-column {
+        margin-bottom: 20px;
+        min-width: auto;
+        width: 100%;
+    }
+    
+    .day-column h3 {
+        font-size: 16px;
+        padding: 12px;
+    }
+    
+    .meals {
+        padding: 15px;
+    }
+    
+    .meal h4 {
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+    
+    .meal-content {
+        min-height: 80px;
         padding: 10px;
     }
     
-    .weekly-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .meal-item {
+        padding: 10px;
+        margin: 8px 0;
+        font-size: 14px;
     }
     
-    .add-ingredient, .add-menu, .add-expense {
-        flex-direction: column;
+    .dish-category {
+        font-size: 11px;
     }
     
-    .input-group {
+    .menu-name {
+        font-size: 14px;
+        font-weight: bold;
+    }
+    
+    .menu-info {
+        font-size: 12px;
+    }
+    
+    .total-info {
+        font-size: 12px;
+    }
+    
+    /* フォーム要素の調整 */
+    .setup-form {
+        max-width: 100%;
+        margin: 0;
+    }
+    
+    .form-section {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+    
+    .input-row {
         flex-direction: column;
+        align-items: stretch;
+        margin-bottom: 12px;
+    }
+    
+    .input-row label {
+        min-width: auto;
+        margin-bottom: 5px;
+        font-size: 14px;
+    }
+    
+    .input-row input, .input-row select {
+        padding: 12px;
+        font-size: 16px;
+        border-radius: 8px;
+    }
+    
+    .health-slider-container {
+        padding: 10px 0;
+    }
+    
+    #health-level {
+        height: 40px;
+    }
+    
+    .cuisine-preferences, .dietary-restrictions {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+    
+    .cuisine-option, .restriction-option {
+        padding: 12px;
+        font-size: 14px;
+    }
+    
+    .generate-btn {
+        padding: 15px 25px;
+        font-size: 16px;
+        width: 100%;
+        margin-top: 20px;
+    }
+    
+    /* 計画コントロール */
+    .plan-controls {
+        flex-direction: column;
+        gap: 10px;
         align-items: stretch;
     }
     
-    .input-group label {
-        min-width: auto;
+    .regenerate-btn {
+        width: 100%;
+        padding: 12px;
+        font-size: 14px;
+    }
+    
+    .calories-summary {
+        text-align: center;
+        font-size: 14px;
+        padding: 10px;
+        background: white;
+        border-radius: 8px;
+        border: 1px solid #ecf0f1;
+    }
+    
+    /* 予算管理 */
+    .budget-display {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .budget-item {
+        padding: 12px;
+        font-size: 14px;
+    }
+    
+    /* 買い物リスト */
+    .shopping-summary h3 {
+        font-size: 16px;
+        padding: 12px;
+    }
+    
+    .shopping-category h4 {
+        font-size: 14px;
+        padding-left: 8px;
+    }
+    
+    .shopping-item {
+        margin-left: 10px;
+        padding: 12px 8px;
+        font-size: 14px;
+    }
+    
+    .shopping-item label {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    
+    .item-name {
+        font-size: 15px;
+    }
+    
+    .item-details {
+        font-size: 12px;
+    }
+    
+    /* 記録・分析 */
+    .add-expense {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .add-expense input {
+        padding: 12px;
+        font-size: 16px;
+        border-radius: 8px;
+    }
+    
+    .add-expense button {
+        padding: 12px;
+        font-size: 16px;
+        border-radius: 8px;
+    }
+    
+    .expense-item {
+        padding: 12px;
+        font-size: 14px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .stats {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .stat-item {
+        padding: 15px;
+        text-align: left;
+    }
+    
+    .stat-item h4 {
+        font-size: 12px;
+    }
+    
+    .stat-item .value {
+        font-size: 20px;
+    }
+    
+    /* ボタン調整 */
+    button {
+        padding: 12px 16px;
+        font-size: 14px;
+        border-radius: 8px;
+        min-height: 44px;
+    }
+    
+    .delete-btn {
+        padding: 8px 12px;
+        font-size: 12px;
+        min-height: 36px;
+    }
+    
+    /* 入力フィールド調整 */
+    input, select, textarea {
+        font-size: 16px !important; /* iOS のズーム防止 */
+        min-height: 44px;
+        padding: 12px;
+        border-radius: 8px;
+    }
+    
+    /* チェックボックス・ラジオボタン */
+    input[type="checkbox"], input[type="radio"] {
+        transform: scale(1.2);
+        min-height: auto;
+    }
+    
+    /* スライダー */
+    input[type="range"] {
+        height: 8px;
+        min-height: auto;
+    }
+    
+    /* タッチターゲット最適化 */
+    .tab-btn, button, input, select {
+        touch-action: manipulation;
+    }
+}
+
+/* さらに小さなスマホ対応 */
+@media (max-width: 480px) {
+    .container {
+        padding: 2px;
+    }
+    
+    header {
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+    
+    main {
+        padding: 10px;
+    }
+    
+    .tab-btn {
+        padding: 6px 8px;
+        font-size: 11px;
+        min-width: 55px;
+    }
+    
+    .day-column h3 {
+        font-size: 14px;
+        padding: 10px;
+    }
+    
+    .meals {
+        padding: 10px;
+    }
+    
+    .form-section {
+        padding: 10px;
+    }
+    
+    .generate-btn {
+        padding: 12px 20px;
+        font-size: 15px;
     }
 }
